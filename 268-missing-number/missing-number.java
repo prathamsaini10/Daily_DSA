@@ -1,6 +1,6 @@
 class Solution {
     public int missingNumber(int[] nums) {
-       Arrays.sort(nums);
+       cyclic(nums);
        for(int i=0;i<nums.length;i++){
         if(nums[i]!=i){
             return i;
@@ -8,4 +8,18 @@ class Solution {
        }
        return nums.length;
     }
+    static void cyclic(int[] arr){
+    for (int i=0;i<arr.length;){
+        int correct=arr[i];
+        if(arr[i]!=arr.length && arr[i] != arr[correct]){
+            
+        int temp=arr[i];
+        arr[i]=arr[correct];
+        arr[correct]=temp;
+
+        }else{
+            i++;
+        }
+    }
+}
 }
