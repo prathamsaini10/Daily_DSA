@@ -1,14 +1,16 @@
 class Solution {
     public int missingNumber(int[] nums) {
        cyclic(nums);
-       for(int i=0;i<nums.length;i++){
+      for(int i=0;i<nums.length;i++){
         if(nums[i]!=i){
             return i;
         }
-       }
+       
+      }
        return nums.length;
-    }
-    static void cyclic(int[] arr){
+      }
+    
+    public void cyclic(int[] arr){
     for (int i=0;i<arr.length;){
         int correct=arr[i];
         if(arr[i]!=arr.length && arr[i] != arr[correct]){
