@@ -4,7 +4,7 @@ class Solution {
         int sum=0;
         for(int i=0;i<arr.length;i++){
             sum+=arr[i];
-            if(sum> max) max=sum;
+           max=sum>max?sum:max;
             if(sum<0) sum=0;
         }
         return max;
