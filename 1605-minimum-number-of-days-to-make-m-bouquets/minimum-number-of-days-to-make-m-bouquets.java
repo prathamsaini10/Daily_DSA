@@ -4,8 +4,11 @@ class Solution {
         long l=(long)m*k;
    int n=arr.length;
         if(l>n)return -1;
-      
-        int low=1;int high= (int)1e9;
+        for(int i=0;i<n;i++){
+            max=Math.max(arr[i],max);
+            min=Math.min(arr[i],min);
+        }
+        int low=min;int high= max;
         while(low<=high){
             int mid =low+(high-low)/2;
             if(possible(arr,mid,m,k)){
