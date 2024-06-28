@@ -1,15 +1,16 @@
 class Solution {
     public int smallestDivisor(int[]arr, int t) {
         int low=1;
-        int max=getmax(arr);
+        int high=getmax(arr);
         
-         int high=max;
-         while(low<=high){
+        
+         while(low<high){
             int mid=low+(high-low)/2;
-            if(sum(arr,mid)<=t){
-                high=mid-1;
-            }else{
-                low=mid+1;
+              if(sum(arr, mid)  > t){
+               low  = mid+1;
+            }
+            else{
+                high = mid;
             }
          }
          return low;
