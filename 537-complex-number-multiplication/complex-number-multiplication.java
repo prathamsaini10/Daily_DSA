@@ -1,11 +1,16 @@
 class Solution {
     public String complexNumberMultiply(String num1, String num2) {
-         String[] one = num1.split("\\+");
-        String[] two = num2.split("\\+");
-        int a = Integer.valueOf(one[0]);
-        int b = Integer.valueOf(one[1].replace("i",""));
-        int c = Integer.valueOf(two[0]);
-        int d = Integer.valueOf(two[1].replace("i",""));
-        return String.valueOf(a*c-b*d)+"+"+String.valueOf(b*c+a*d)+"i";
+         int x = num1.indexOf('+');
+        int a = Integer.parseInt(num1.substring(0, x));
+        int b = Integer.parseInt(num1.substring(x+1, num1.length() - 1));
+        x = num2.indexOf('+');
+        int c = Integer.parseInt(num2.substring(0, x));
+        int d = Integer.parseInt(num2.substring(x+1, num2.length() - 1));
+        StringBuilder ans = new StringBuilder();
+        ans.append(a*c - b*d);
+        ans.append('+');
+        ans.append(a*d + b*c);
+        ans.append('i');
+        return ans.toString();
     }
 }
