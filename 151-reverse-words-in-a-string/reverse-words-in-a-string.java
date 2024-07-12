@@ -1,14 +1,10 @@
 class Solution {
     public String reverseWords(String s) {
-      String[] array = s.trim().split("\\s+");
-      StringBuilder sb = new StringBuilder();
-
-for (int i = 1; i <= array.length; i++) {
-  sb.append(array[array.length-i]);
-  if (i < array.length ) {
-    sb.append(" "); // Add spaces between words (optional)
-  }
-}
-        return sb.toString();
+      String[] sentence = s.trim().split("\\s+");
+        String result = "";
+        for(int i=sentence.length - 1; i > 0; i--) {
+            result = result + sentence[i] + " ";
+        }
+        return result + sentence[0];
     }
 }
