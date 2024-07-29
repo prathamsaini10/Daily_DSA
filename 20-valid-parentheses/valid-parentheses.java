@@ -5,7 +5,7 @@ class Solution {
         if(it=='('||it=='['||it=='{'){
             st.push(it);
         }else{
-            if(st.isEmpty())return false;
+            if(st.empty())return false;
             char ch=st.pop();
             if((it==')'&&ch=='(')||(it==']'&&ch=='[')||(it=='}'&&ch=='{'))continue;
             else return false;
@@ -13,6 +13,6 @@ class Solution {
 
         }
      }
-     return st.isEmpty();
+     return st.empty();
     }
 }
