@@ -6,7 +6,7 @@ class Solution {
         int mod=(int )(1e9+7);
         long sum=0;
         for(int i=0;i<n;i++){
-            sum=(sum+(long)(arr[i]*(long)(ans1[i]*ans2[i])%mod)%mod)%mod;
+            sum=(sum+(long)(arr[i]*(long)(ans1[i]*ans2[i]))%mod)%mod;
         }
         return (int )sum;
     }
