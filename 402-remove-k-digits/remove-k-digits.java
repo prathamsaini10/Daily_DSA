@@ -18,13 +18,10 @@ class Solution {
 
             StringBuilder sb=new StringBuilder();
             if(st.isEmpty())return "0";
-          while(!st.isEmpty()){
-               sb.append(st.pop());
-          }
-          while(sb.length()>0&&sb.charAt(sb.length()-1)=='0'){
-             sb.deleteCharAt(sb.length()-1);
-          }
-            sb.reverse();
+          for (Character c : st) {
+        	if(sb.length()==0 && c=='0')continue;
+            sb.append(c);
+        }
         
        if(sb.toString().equals("")) return "0";
 		return sb.toString();
