@@ -16,19 +16,35 @@
 class Solution {
     public List<Integer> preorderTraversal(TreeNode root) {
         
-        List<Integer> list =new ArrayList<>();
-        preOderHelper(root,list);
-        return list;
+    //     List<Integer> list =new ArrayList<>();
+    //     preOderHelper(root,list);
+    //     return list;
      
-    }
+    // }
 
-    public void preOderHelper(TreeNode root,List<Integer> list){
+    // public void preOderHelper(TreeNode root,List<Integer> list){
        
-        if(root==null){
-            return ;
+    //     if(root==null){
+    //         return ;
+    //     }
+    //     list.add(root.val);
+    //     preOderHelper(root.left,list);
+    // preOderHelper(root.right,list);
+
+
+                //Using stack
+
+        List<Integer> preorder =new ArrayList<>();
+        if(root==null)return preorder;
+        Stack<TreeNode> st=new Stack<>();
+        st.push(root);
+        while(!st.isEmpty()){
+            TreeNode node=st.pop();
+            preorder.add(node.val);
+            if(node.right!=null)st.push(node.right);
+            if(node.left!=null) st.push(node.left);
         }
-        list.add(root.val);
-        preOderHelper(root.left,list);
-    preOderHelper(root.right,list);
+         return preorder;
     }
+   
 }
