@@ -1,6 +1,6 @@
 class Solution {
     public String intToRoman(int num) {
-        TreeMap<Integer,String> map=new TreeMap<>();
+        HashMap<Integer,String> map=new HashMap<>();
       map.put(1,"I"); 
        map.put(4,"IV");
        map.put(5,"V");
@@ -15,7 +15,6 @@ class Solution {
        map.put(900,"CM");
        map.put(1000,"M");
         StringBuilder st=new StringBuilder();
-        int nums=num;
        while(num>0){
         if(num>=1000){
             st.append(map.get(1000));
@@ -57,9 +56,6 @@ class Solution {
              st.append(map.get(1));
             num-=1;
         }
-    //   Integer closeKey = map.floorKey(nums);
-    //  st.append(map.get(closeKey));
-    //  nums-=closeKey;
 
        }
 return st.toString();
